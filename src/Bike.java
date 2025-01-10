@@ -1,8 +1,12 @@
 public class Bike extends Vehicle {
 
     public  Bike(String name) {
-        super.name = name;
-        super.type = "pedaled";
+        super(name, "pedaled");
 
+    }
+
+    @Override
+    public String soundWarning() {
+        return "pling-pling";
     }
 }

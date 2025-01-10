@@ -1,8 +1,17 @@
 public class Vehicle {
 
-    String name;
-    String type;
+    private String name;
+    private String type;
+    Double price = 0.0;
+    Double discount = 0.9;
 
+    public Vehicle(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
+    public String soundWarning() {
+        return "default sound";
+    }
     public String getName() {
         return name;
     }
@@ -11,6 +20,13 @@ public class Vehicle {
         return type;
     }
 
+    public Double getPrice() {
+        return price * discount;
+    }
+public void setPrice(Double price){
+        if (price <0) throw new RuntimeException("Bad Price!");
+        this.price = price;
+}
     public void setName(String name) {
         this.name = name;
     }
